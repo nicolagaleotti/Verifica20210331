@@ -8,7 +8,7 @@ namespace Figure
 {
     public class Quadrato : Figura
     {
-        public Quadrato(double lato) : base(lato) { }
+        public Quadrato(double lato) : base(lato, 4) { }
 
         public override string GetDescrizione()
         {
@@ -23,6 +23,11 @@ namespace Figure
         public override double GetArea()
         {
             return valore * valore;
+        }
+
+        public override int GetNumeroLati()
+        {
+            return numeroLati;
         }
     }
 }

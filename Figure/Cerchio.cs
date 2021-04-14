@@ -8,7 +8,7 @@ namespace Figure
 {
     public class Cerchio : Figura
     {
-        public Cerchio(double raggio) : base(raggio) { }
+        public Cerchio(double raggio) : base(raggio, 0) { }
 
         public override string GetDescrizione()
         {
@@ -23,6 +23,11 @@ namespace Figure
         public override double GetArea()
         {
             return Math.PI * valore * valore;
+        }
+
+        public override int GetNumeroLati()
+        {
+            return numeroLati;
         }
     }
 }

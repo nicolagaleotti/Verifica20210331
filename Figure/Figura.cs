@@ -9,10 +9,12 @@ namespace Figure
     public abstract class Figura
     {
         protected double valore;
+        protected int numeroLati;
 
-        public Figura(double valore)
+        public Figura(double valore, int numeroLati)
         {
             this.valore = valore;
+            this.numeroLati = numeroLati;
         }
 
         public abstract string GetDescrizione();
@@ -20,5 +22,7 @@ namespace Figure
         public abstract double GetPerimetro();
 
         public abstract double GetArea();
+
+        public abstract int GetNumeroLati();
     }
 }

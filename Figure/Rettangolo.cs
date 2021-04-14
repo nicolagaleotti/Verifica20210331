@@ -10,7 +10,7 @@ namespace Figure
     {
         private double altezza;
 
-        public Rettangolo(double lato, double altezza):base(lato)
+        public Rettangolo(double lato, double altezza) : base(lato, 4)
         {
             this.altezza = altezza;
         }
@@ -23,6 +23,11 @@ namespace Figure
         public override string GetDescrizione()
         {
             return $"Rettangolo di base {valore} e altezza {altezza}";
+        }
+
+        public override int GetNumeroLati()
+        {
+            return numeroLati;
         }
 
         public override double GetPerimetro()

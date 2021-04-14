@@ -12,7 +12,7 @@ namespace Figure
         private double lato3;
         private double altezza;
 
-        public Triangolo(double lato1, double lato2, double lato3, double altezza) : base(lato1) 
+        public Triangolo(double lato1, double lato2, double lato3, double altezza) : base(lato1, 3)
         {
             this.lato2 = lato2;
             this.lato3 = lato3;
@@ -27,6 +27,11 @@ namespace Figure
         public override string GetDescrizione()
         {
             return $"Triangolo di lato {valore}, {lato2}, {lato3} e altezza {altezza}";
+        }
+
+        public override int GetNumeroLati()
+        {
+            return numeroLati;
         }
 
         public override double GetPerimetro()

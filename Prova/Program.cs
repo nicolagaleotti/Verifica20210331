@@ -46,6 +46,12 @@ namespace Prova
             Console.WriteLine(s.ElencaFigure());
             s.Svuota();
 
+            Console.WriteLine("POLITICA: MinimoLati(4)");
+            s.ImpostaPolitica(new MinimoLati(4));
+            s.ScansionaContenitore(c);
+            Console.WriteLine(s.ElencaFigure());
+            s.Svuota();
+
             Console.ReadLine();
         }
     }

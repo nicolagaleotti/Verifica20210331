@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaMassima.cs" />
+    <Compile Include="MinimoLati.cs" />
     <Compile Include="PerimetroMinimo.cs" />
     <Compile Include="PoliticaSelezione.cs" />
     <Compile Include="Selettore.cs" />
