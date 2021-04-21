@@ -8,6 +8,9 @@ namespace Figure
 {
     public class Contenitore
     {
+        public string Nome { get; set; }
+        public int ID { get; set; }
+
         protected List<Figura> figure = new List<Figura>();
 
         public Contenitore() { }

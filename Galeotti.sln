@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Politiche", "Politiche\Poli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prova", "Prova\Prova.csproj", "{FEB7A708-814D-4BD5-8DE9-5E61F0F32338}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfacciaWPF", "InterfacciaWPF\InterfacciaWPF.csproj", "{36285B6D-E8E2-4ED7-8D61-36D270B11F6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FEB7A708-814D-4BD5-8DE9-5E61F0F32338}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEB7A708-814D-4BD5-8DE9-5E61F0F32338}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEB7A708-814D-4BD5-8DE9-5E61F0F32338}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36285B6D-E8E2-4ED7-8D61-36D270B11F6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36285B6D-E8E2-4ED7-8D61-36D270B11F6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36285B6D-E8E2-4ED7-8D61-36D270B11F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36285B6D-E8E2-4ED7-8D61-36D270B11F6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
