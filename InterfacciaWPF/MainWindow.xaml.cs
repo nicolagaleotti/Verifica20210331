@@ -25,24 +25,29 @@ namespace InterfacciaWPF
         public MainWindow()
         {
             InitializeComponent();
-            c1.Nome = "c1";
-            c2.Nome = "c2";
-            contenitori.Add(c1);
-            contenitori.Add(c2);
         }
 
-        Contenitore c1 = new Contenitore();
-        Contenitore c2 = new Contenitore();
+        List<Contenitore> contenitori = new List<Contenitore>() { };
 
-        List<Contenitore> contenitori = new List<Contenitore>() {};
-
-        string[] elementi = new string[] {"Contenitore","Selettore","Quadrato","Cerchio"};
-        string[] politiche = new string[] {"Area Massima","Minimo Lati","Perimetro Minimo"};
+        string[] elementi = new string[] { "Contenitore", "Selettore", "Quadrato", "Cerchio" };
+        string[] politiche = new string[] { "Area Massima", "Minimo Lati", "Perimetro Minimo" };
 
         private void cmbElemento_Loaded(object sender, RoutedEventArgs e)
         {
             foreach (string s in elementi)
                 cmbElemento.Items.Add(s);
+        }
+
+        private void cmbElemento_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cmbElemento.SelectedIndex == -1 || cmbElemento.SelectedIndex == 0 || cmbElemento.SelectedIndex == 1)
+            {
+                txtValore.IsEnabled = false;
+            }
+            else if (cmbElemento.SelectedIndex == 2 || cmbElemento.SelectedIndex == 3)
+            {
+                txtValore.IsEnabled = true;
+            }
         }
 
         private void cmbPolitica_Loaded(object sender, RoutedEventArgs e)
@@ -51,27 +56,98 @@ namespace InterfacciaWPF
                 cmbPolitica.Items.Add(s);
         }
 
-        private void cmbContenitore1_Loaded(object sender, RoutedEventArgs e)
+        private void btnCrea_Click(object sender, RoutedEventArgs e)
         {
-            foreach(Contenitore c in contenitori)
+            try
             {
-                cmbContenitore1.Items.Add(c.Nome);
+                if (cmbElemento.SelectedIndex == -1)
+                    throw new Exception("Selezionare un elemento!");
+                else if (cmbElemento.SelectedIndex == 0 || cmbElemento.SelectedIndex == 1)
+                {
+                    if (txtNome.Text == "")
+                        throw new Exception("Immettere un nome!");
+
+                    if (cmbElemento.SelectedIndex == 0)
+                    {
+                        Contenitore c = new Contenitore();
+                        c.Nome = txtNome.Text;
+                        c.ID = int.Parse(txtID.Text);
+                        txtID.Text = (int.Parse(txtID.Text) + 1).ToString();
+                        if (cmbContenitore1.SelectedIndex != -1)
+                            contenitori[cmbContenitore1.SelectedIndex].AggiungiContenitore(c);
+                        contenitori.Add(c);
+                    }
+                    if (cmbElemento.SelectedIndex == 1)
+                    {
+                        Selettore s = new Selettore();
+                        s.Nome = txtNome.Text;
+                        s.ID = int.Parse(txtID.Text);
+                        txtID.Text = (int.Parse(txtID.Text) + 1).ToString();
+                        if (cmbContenitore1.SelectedIndex != -1)
+                            contenitori[cmbContenitore1.SelectedIndex].AggiungiContenitore(s);
+                        contenitori.Add(s);
+                    }
+
+                    cmbContenitore1.Items.Add(contenitori[contenitori.Count - 1].Nome);
+                    cmbContenitore2.Items.Add(contenitori[contenitori.Count - 1].Nome);
+                    cmbContenitore3.Items.Add(contenitori[contenitori.Count - 1].Nome);
+                }
+                else if (cmbElemento.SelectedIndex == 2 || cmbElemento.SelectedIndex == 3)
+                {
+                    if (txtValore.Text == "")
+                        throw new Exception("Immettere un valore!");
+                    if (txtNome.Text == "")
+                        throw new Exception("Immettere un nome!");
+                    if (cmbContenitore1.SelectedIndex == -1)
+                        throw new Exception("Selezionare un contenitore!");
+
+                    if (cmbElemento.SelectedIndex == 2)
+                    {
+                        Quadrato q = new Quadrato(double.Parse(txtValore.Text));
+                        q.Nome = txtNome.Text;
+                        contenitori[cmbContenitore1.SelectedIndex].AggiungiFigura(q);
+                    }
+                    if (cmbElemento.SelectedIndex == 3)
+                    {
+                        Cerchio c = new Cerchio(double.Parse(txtValore.Text));
+                        c.Nome = txtNome.Text;
+                        contenitori[cmbContenitore1.SelectedIndex].AggiungiFigura(c);
+                    }
+                }
+
+                cmbElemento.SelectedIndex = -1;
+                txtValore.Text = "";
+                txtNome.Text = "";
+                cmbContenitore1.SelectedIndex = -1;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void cmbContenitore2_Loaded(object sender, RoutedEventArgs e)
+        private void btnStampaPolitiche_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Contenitore c in contenitori)
+            try
             {
-                cmbContenitore2.Items.Add(c.Nome);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
-        private void cmbContenitore3_Loaded(object sender, RoutedEventArgs e)
+        private void btnStampaContenitori_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Contenitore c in contenitori)
+            try
             {
-                cmbContenitore3.Items.Add(c.Nome);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -11,6 +11,8 @@ namespace Politiche
     {
         private PoliticaSelezione politica = null;
 
+        public Selettore() { }
+
         public void ScansionaContenitore(Contenitore contenitore)
         {
             if (politica != null)

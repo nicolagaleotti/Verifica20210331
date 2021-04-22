@@ -10,6 +10,7 @@ namespace Figure
     {
         protected double valore;
         protected int numeroLati;
+        public string Nome { get; set; }
 
         public Figura(double valore, int numeroLati)
         {
@@ -24,5 +25,10 @@ namespace Figure
         public abstract double GetArea();
 
         public abstract int GetNumeroLati();
+
+        public string Stampa()
+        {
+            return $"{Nome}";
+        }
     }
 }

@@ -45,7 +45,7 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <ComboBox Name="cmbElemento" Width="250" FontSize="20" Foreground="Black" Loaded="cmbElemento_Loaded"/>
+                            <ComboBox Name="cmbElemento" Width="250" FontSize="20" Foreground="Black" Loaded="cmbElemento_Loaded" SelectionChanged="cmbElemento_SelectionChanged"/>
                         </StackPanel>
                         
                         <StackPanel Grid.Row="6">
@@ -60,7 +60,7 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="left">
-                                    <TextBox Name="txtValore" IsEnabled="False" Width="131" FontSize="20" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                                    <TextBox Name="txtValore" IsEnabled="False" Width="131" FontSize="20" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
@@ -112,13 +112,13 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="left">
-                                    <ComboBox Name="cmbContenitore1" Width="131" FontSize="20" Foreground="Black" Loaded="cmbContenitore1_Loaded"/>
+                                    <ComboBox Name="cmbContenitore1" Width="131" FontSize="20" Foreground="Black"/>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
 
                         <StackPanel Grid.Row="14" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <Button Name="btnCrea" Content="CREA" Height="45" Width="100" FontSize="22" FontWeight="Bold" Foreground="Black"/>
+                            <Button Name="btnCrea" Content="CREA" Height="45" Width="100" FontSize="22" FontWeight="Bold" Foreground="Black" Click="btnCrea_Click"/>
                         </StackPanel>
 
                     </Grid>
@@ -190,13 +190,13 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="left">
-                                    <ComboBox Name="cmbContenitore2" Width="190" FontSize="20" Foreground="Black" Loaded="cmbContenitore2_Loaded"/>
+                                    <ComboBox Name="cmbContenitore2" Width="190" FontSize="20" Foreground="Black"/>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
 
                         <StackPanel Grid.Row="8" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <Button Name="btnStampaPolitiche" Content="STAMPA" Height="45" Width="100" FontSize="22" FontWeight="Bold" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <Button Name="btnStampaPolitiche" Content="STAMPA" Height="45" Width="100" FontSize="22" FontWeight="Bold" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnStampaPolitiche_Click"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -235,13 +235,13 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="left">
-                                    <ComboBox Name="cmbContenitore3" Width="160" FontSize="20" Foreground="Black" Loaded="cmbContenitore3_Loaded"/>
+                                    <ComboBox Name="cmbContenitore3" Width="160" FontSize="20" Foreground="Black"/>
                                 </StackPanel>
                             </Grid>
                         </StackPanel>
 
                         <StackPanel Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center">
-                            <Button Name="btnStampaContenitori" Content="STAMPA" Height="45" Width="100" FontSize="22" FontWeight="Bold" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <Button Name="btnStampaContenitori" Content="STAMPA" Height="45" Width="100" FontSize="22" FontWeight="Bold" Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btnStampaContenitori_Click"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center">

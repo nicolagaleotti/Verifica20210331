@@ -12,6 +12,8 @@ namespace Figure
         public int ID { get; set; }
 
         protected List<Figura> figure = new List<Figura>();
+        protected List<Contenitore> contenitori = new List<Contenitore>();
+
 
         public Contenitore() { }
 
@@ -31,6 +33,16 @@ namespace Figure
         public List<Figura> GetFigure()
         {
             return figure;
+        }
+
+        public void AggiungiContenitore(Contenitore contenitore)
+        {
+            contenitori.Add(contenitore);
+        }
+
+        public List<Contenitore> GetContenitori()
+        {
+            return contenitori;
         }
 
         public void Svuota()

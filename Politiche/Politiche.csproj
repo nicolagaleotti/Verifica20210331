@@ -45,8 +45,8 @@
     <Compile Include="MinimoLati.cs" />
     <Compile Include="PerimetroMinimo.cs" />
     <Compile Include="PoliticaSelezione.cs" />
-    <Compile Include="Selettore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selettore.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Figure\Figure.csproj">
