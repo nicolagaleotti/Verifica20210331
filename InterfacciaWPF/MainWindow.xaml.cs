@@ -131,7 +131,35 @@ namespace InterfacciaWPF
         {
             try
             {
+                lbPolitiche.Items.Clear();
 
+                if (cmbPolitica.SelectedIndex == -1)
+                    throw new Exception("Selezionare una politica di selezione!");
+                if (txtParametro.Text == "")
+                    throw new Exception("Immettere un parametro!");
+                if (cmbContenitore2.SelectedIndex == -1)
+                    throw new Exception("Selezionare un contenitore da scansionare!");
+
+                PoliticaSelezione politica = null;
+                if (cmbPolitica.SelectedIndex == 0)
+                    politica = new AreaMassima(double.Parse(txtParametro.Text));
+                if (cmbPolitica.SelectedIndex == 1)
+                    politica = new MinimoLati(int.Parse(txtParametro.Text));
+                if (cmbPolitica.SelectedIndex == 2)
+                    politica = new PerimetroMinimo(double.Parse(txtParametro.Text));
+
+                Selettore s = new Selettore();
+                s.ImpostaPolitica(politica);
+                s.ScansionaContenitore(contenitori[cmbContenitore2.SelectedIndex]);
+
+                foreach (Figura f in s.GetFigure())
+                {
+                    lbPolitiche.Items.Add(f.GetDescrizione());
+                }
+
+                cmbPolitica.SelectedIndex = -1;
+                txtParametro.Text = "";
+                cmbContenitore2.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
