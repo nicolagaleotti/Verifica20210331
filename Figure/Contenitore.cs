@@ -49,5 +49,40 @@ namespace Figure
         {
             figure.Clear();
         }
+
+        public string Stampa()
+        {
+            return $"({Nome}{StampaContenitori()}{StampaFigure()})";
+        }
+
+        private string StampaContenitori()
+        {
+            string s = $"";
+            foreach (Contenitore c in contenitori)
+            {
+                s += $"{c.Stampa()}";
+            }
+            return s;
+        }
+
+        private string StampaFigure()
+        {
+            string s = $"";
+            foreach (Figura f in figure)
+            {
+                if (f == figure[0] && f == figure[figure.Count - 1])
+                    s += $"[{f.Nome}]";
+                else
+                {
+                    if (f == figure[0])
+                        s += $"[{f.Nome},";
+                    if (f != figure[figure.Count - 1])
+                        s += $"{f.Nome},";
+                    if (f == figure[figure.Count - 1])
+                        s += $"{f.Nome}]";
+                }
+            }
+            return s;
+        }
     }
 }

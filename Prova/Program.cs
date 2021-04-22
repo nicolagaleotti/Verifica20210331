@@ -52,7 +52,33 @@ namespace Prova
             Console.WriteLine(s.ElencaFigure());
             s.Svuota();
 
+
+            Console.WriteLine("\n");
+
+
+            Contenitore c1 = new Contenitore();
+            c1.Nome = "c1";
+
+            Quadrato q = new Quadrato(3);
+            q.Nome = "q";
+            c1.AggiungiFigura(q);
+
+            Contenitore c2 = new Contenitore();
+            c2.Nome = "c2";
+            c1.AggiungiContenitore(c2);
+
+            Cerchio cerchio = new Cerchio(4);
+            cerchio.Nome = "cerchio";
+            c2.AggiungiFigura(cerchio);
+
+            Contenitore c3 = new Contenitore();
+            c3.Nome = "c3";
+            c2.AggiungiContenitore(c3);
+
+            Console.WriteLine(c1.Stampa());
+
             Console.ReadLine();
         }
+        
     }
 }

@@ -131,14 +131,14 @@ namespace InterfacciaWPF
         {
             try
             {
-                lbPolitiche.Items.Clear();
-
                 if (cmbPolitica.SelectedIndex == -1)
                     throw new Exception("Selezionare una politica di selezione!");
                 if (txtParametro.Text == "")
                     throw new Exception("Immettere un parametro!");
                 if (cmbContenitore2.SelectedIndex == -1)
                     throw new Exception("Selezionare un contenitore da scansionare!");
+
+                lbPolitiche.Items.Clear();
 
                 PoliticaSelezione politica = null;
                 if (cmbPolitica.SelectedIndex == 0)
@@ -160,6 +160,7 @@ namespace InterfacciaWPF
                 cmbPolitica.SelectedIndex = -1;
                 txtParametro.Text = "";
                 cmbContenitore2.SelectedIndex = -1;
+
             }
             catch (Exception ex)
             {
@@ -171,6 +172,14 @@ namespace InterfacciaWPF
         {
             try
             {
+                if (cmbContenitore3.SelectedIndex == -1)
+                    throw new Exception("Selezionare un contenitore!");
+
+                lbContenitori.Items.Clear();
+
+                lbContenitori.Items.Add(contenitori[cmbContenitore3.SelectedIndex].Stampa());
+
+                cmbContenitore3.SelectedIndex = -1;
 
             }
             catch (Exception ex)

@@ -25,10 +25,5 @@ namespace Figure
         public abstract double GetArea();
 
         public abstract int GetNumeroLati();
-
-        public string Stampa()
-        {
-            return $"{Nome}";
-        }
     }
 }
